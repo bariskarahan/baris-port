@@ -1,10 +1,18 @@
 #!/bin/bash
 set -e
 cd "$(dirname "$0")"
-export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  . "$HOME/.nvm/nvm.sh" --no-use
+  if [ "$(uname -s)" = Darwin ] && [[ "$(sw_vers -productVersion)" == 10.15.* ]]; then
+    nvm use 18.20.8 || { echo "Catalina icin nvm install 18.20.8 komutunu calistirip tekrar ac."; read -r -p "Kapatmak icin Enter: " answer; exit 1; }
+  elif ! command -v node >/dev/null 2>&1; then
+    nvm use default
+  fi
+fi
 pause_exit() { printf '\n%s\n' "$1"; read -r -p 'Kapatmak icin Enter: ' answer; exit 1; }
 command -v node >/dev/null 2>&1 || { open 'https://nodejs.org/en/download'; pause_exit 'Node.js gerekli. Acilan sayfadan LTS macOS installer (.pkg) indirip kur, sonra bu dosyayi tekrar ac.'; }
-node -e 'if(Number(process.versions.node.split(".")[0]) < 22) process.exit(1)' || { open 'https://nodejs.org/en/download'; pause_exit 'Node.js 22 veya daha yeni bir LTS surumunu kurup tekrar ac.'; }
+node -e 'if(Number(process.versions.node.split(".")[0]) < 18 || (Number(process.versions.node.split(".")[0]) === 18 && Number(process.versions.node.split(".")[1]) < 18)) process.exit(1)' || { open 'https://nodejs.org/en/download'; pause_exit 'Node.js 18.18 veya daha yeni bir surum gerekli. Guncel macOS icin desteklenen LTS surumunu kullan.'; }
 command -v npm >/dev/null 2>&1 || pause_exit 'npm bulunamadi. Node.js LTS macOS installer ile kurulumu tamamla.'
 if [ ! -d node_modules ]; then
   printf '\nIlk kurulum yapiliyor. Internet baglantisi gerekiyor.\n'

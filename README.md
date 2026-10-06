@@ -4,7 +4,7 @@ A personal learning publication for mobile game product thinking. Built with Nex
 
 ## Development
 
-Node.js 22 or newer recommended (validated with Node 24).
+Use a supported Node.js LTS on current systems (validated with Node 24). Next.js requires Node 18.18+; Node 18.20.8 can be used for local-only preview on macOS Catalina, but it is end of life and must not be used for production. Tailwind 3 avoids the Tailwind 4 native CSS binding requirement.
 
 ```sh
 npm ci
