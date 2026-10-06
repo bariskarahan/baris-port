@@ -1,0 +1,9 @@
+1. ZIP dosyasini ac.
+2. SITEYI-AC.command dosyasina cift tikla.
+3. Node.js yoksa indirme sayfasi acilir. LTS macOS installer (.pkg) indirip kur; sonra SITEYI-AC.command dosyasini tekrar ac.
+4. Ilk acilista bagimliliklar yuklenir, sonra site tarayicida otomatik acilir.
+5. Terminal penceresini acik tut. Siteyi kapatmak icin Control+C kullan.
+
+macOS dosyayi engellerse yalnizca bu dosya icin Sistem Ayarlari > Gizlilik ve Guvenlik bolumundeki Yine de Ac secenegini kullan. Sistem guvenligini genel olarak kapatma.
+
+Icerikler ornektir; deneyler gerceklestirilmemistir. Proje dosyalari lib/content.ts, app/ ve components/ altindadir.
