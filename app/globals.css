@@ -33,3 +33,20 @@ body{font-size:18px}
 .page-intro p,.article-title>p,.about-copy p,.experiment-detail dd{font-size:18px}.article-body p{font-size:19px}.article-body h2{font-size:31px}.article-layout{grid-template-columns:1fr}.article-byline{flex-wrap:wrap;gap:12px 20px}.footer>div{font-size:13px}
 .archive-tools{align-items:start}.archive-tools>.muted{padding-top:26px}.filters button{font-size:14px;padding:10px 12px}.eyebrow{font-size:12px}
 }
+
+/* Torn-paper notebook footer, inspired by the supplied reference. */
+:root{--paper:#e7e7e7;--panel:#d7d7d7;--ink:#111;--line:#bfbfbf}
+.notebook-footer{position:relative;isolation:isolate;background:#e7e7e7;margin-top:0;padding:145px 0 72px;overflow:hidden;min-height:330px}
+.footer-tear{position:absolute;z-index:-1;inset:0 0 auto;height:85px;background:#d7d7d7;clip-path:polygon(0 0,100% 0,100% 18%,98% 18%,96% 23%,94% 22%,92% 29%,90% 27%,88% 35%,87% 32%,86% 48%,85% 30%,83% 34%,81% 39%,79% 32%,77% 38%,75% 31%,73% 32%,71% 23%,69% 28%,67% 21%,65% 30%,63% 26%,61% 19%,60% 14%,59% 25%,57% 16%,55% 25%,53% 21%,51% 33%,49% 28%,47% 23%,45% 35%,43% 31%,41% 22%,39% 31%,37% 38%,35% 33%,33% 42%,31% 40%,29% 47%,27% 58%,25% 73%,23% 78%,21% 80%,19% 92%,17% 94%,15% 83%,13% 71%,11% 57%,9% 46%,7% 42%,5% 34%,3% 26%,2% 32%,0 27%)}
+.footer-content{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:34px;align-items:end;width:min(1280px,calc(100% - 112px))}
+.footer-identity p{font-size:clamp(19px,1.6vw,24px);font-weight:700;letter-spacing:-.7px;line-height:1.25;margin:0 0 12px}
+.footer-identity>span{font-size:15px;line-height:1.5;display:block}
+.footer-manifesto{font-size:16px;font-weight:600;line-height:1.5;text-align:center;margin:0}
+.footer-credit{font-size:14px;line-height:1.6;text-align:right;font-weight:600}
+.footer-credit span{font-weight:400}
+.footer-cactus{position:absolute;bottom:-43px;width:125px;height:170px;object-fit:contain;pointer-events:none;z-index:0}
+.cactus-left{left:-27px;transform:rotate(-6deg)}
+.cactus-right{right:-25px;transform:scaleX(-1) rotate(-8deg);width:105px;height:143px;bottom:-36px}
+.home-about{background:var(--panel);width:100%;padding:45px max(40px,calc((100vw - 1120px)/2)) 80px}
+@media(max-width:900px){.footer-content{width:calc(100% - 80px);grid-template-columns:1fr 1fr;gap:30px}.footer-identity{grid-column:1/-1}.footer-manifesto{text-align:left}.notebook-footer{padding-top:115px}.home-about{padding-inline:24px}}
+@media(max-width:600px){.notebook-footer{padding:105px 0 100px}.footer-content{width:calc(100% - 48px);grid-template-columns:1fr;gap:30px;text-align:center}.footer-identity{grid-column:auto}.footer-identity p{font-size:23px}.footer-identity>span{font-size:14px}.footer-manifesto,.footer-credit{text-align:center}.footer-cactus{width:100px;height:140px}.cactus-right{width:85px;height:115px}.home-about{padding-inline:18px}}
