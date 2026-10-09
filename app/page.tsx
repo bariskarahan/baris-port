@@ -1,40 +1,16 @@
 import Link from 'next/link';
-import { articles, experiments } from '@/lib/content';
-import { Label, Motif, SectionHeading } from '@/components/site';
-
-export default function Home() {
-  return <main id="main">
-    <section className="hero shell">
-      <Label>barış / games, people & product</Label>
-      <h1>i play games.<br/>then i ask <em>why.</em></h1>
-      <p>A public notebook on mobile games,<br/>human behavior, and ideas worth testing.</p>
-      <Link href="/thinking" className="button">open the notebook <span>↗</span></Link>
-      <div className="hero-aside" aria-hidden="true"><svg className="asterisk" viewBox="0 0 120 120"><g stroke="currentColor" strokeWidth="11"><path d="M60 8v104M8 60h104M23 23l74 74M23 97l74-74"/></g></svg></div>
-    </section>
-
-    <section className="paper-section"><div className="shell">
-      <SectionHeading title="selected thinking" href="/thinking"/>
-      <Link className="featured" href={`/thinking/${articles[0].slug}`}>
-        <div className="featured-copy">
-          <Label>featured teardown / sample</Label>
-          <h3>{articles[0].title}</h3>
-          <p>{articles[0].summary}</p>
-          <span className="read-link">read the note <span>↗</span></span>
-        </div>
-        <Motif large/>
-      </Link>
-      <div className="note-list">{articles.slice(1,3).map(a=><Link href={`/thinking/${a.slug}`} key={a.slug} className="note-row"><div><Label>{a.category} / sample</Label><h3>{a.title}</h3></div><span aria-hidden="true">↗</span></Link>)}</div>
-    </div></section>
-
-    <section className="shell experiment-section">
-      <SectionHeading title="questions i’d test" href="/experiments" label="all experiments"/>
-      <div className="experiment-grid">{experiments.slice(0,2).map(e=><Link href={`/experiments#${e.slug}`} key={e.id} className="experiment-card"><Label>proposed experiment {e.id}</Label><h3>{e.title}</h3><p>{e.question}</p><span className="read-link">see the plan <span>↗</span></span></Link>)}</div>
-    </section>
-
-    <section className="shell home-about">
-      <Label>about this notebook</Label>
-      <p>I’m Barış, a business graduate learning the mobile gaming industry. This is where I document what I notice, question, and learn.</p>
-      <Link className="small-link" href="/about">more about me ↗</Link>
-    </section>
-  </main>;
-}
+import { articles, experiments, topics } from '@/lib/content';
+import { Label, Motif, SectionHeading, ArticleCard } from '@/components/site';
+export default function Home(){return <main id="main">
+  <section className="hero shell">
+    <div><Label>games, people & product</Label><h1>play. notice.<br/>question. test.</h1><p className="hero-signature">an independent learning notebook by barış.</p></div>
+    <div className="hero-note"><span className="note-index">NO. 001 — AN OPEN NOTEBOOK</span><p>I play games, study the decisions behind them, and turn what I notice into questions worth testing.</p><Link href="/thinking" className="button">open the notebook</Link></div>
+  </section>
+  <section className="shell home-board" aria-label="Inside the notebook">
+    <Link className="feature-panel" href={`/thinking/${articles[0].slug}`}><div className="panel-heading"><Label>01 / selected thinking</Label><span className="small-meta">sample note</span></div><div className="feature-copy"><h2>{articles[0].title}</h2><p>{articles[0].summary}</p></div><Motif/><div className="panel-action"><span>read the teardown</span><span>{articles[0].readTime}</span></div></Link>
+    <div className="experiment-stack">{experiments.slice(0,2).map((e,i)=><Link href={`/experiments#${e.slug}`} className={`compact-experiment experiment-tone-${i}`} key={e.id}><div className="panel-heading"><Label>experiment {e.id}</Label><span className="small-meta">proposed</span></div><h2>{e.title}</h2><p>{e.question}</p><span className="mini-button">see the test plan</span></Link>)}</div>
+    <Link href="/about" className="about-panel"><div className="panel-heading"><Label>02 / the person behind it</Label></div><h2>curious.<br/>still growing.</h2><p>Learning the mobile gaming industry, one question at a time.</p><img src="/images/footer-cactus.png" alt="Green cacti and purple crystals" width="260" height="390"/><span className="mini-button">a little about barış</span></Link>
+  </section>
+  <section className="paper-section"><div className="shell"><SectionHeading title="recent notes" href="/thinking" label="all thinking"/><div className="article-grid">{articles.slice(1).map(a=><ArticleCard article={a} key={a.slug}/>)}</div><div className="topic-block"><Label>following my curiosity</Label><div className="topic-links">{topics.filter(t=>t!=='all').map(t=><Link key={t} href={`/thinking?topic=${encodeURIComponent(t)}`}>{t}</Link>)}</div></div></div></section>
+  <section className="shell home-about"><Label>the practice</Label><p>Play something. Notice a pattern.<br/>Ask a better question. Find a way to test it.</p><Link href="/experiments" className="small-link">inside the experiment notebook</Link></section>
+</main>}
