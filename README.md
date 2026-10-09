@@ -32,4 +32,4 @@ Add notes to `lib/content.ts`. Each article includes a unique slug, category, su
 - `/experiments` — question, hypothesis, setup, metric, result, lesson
 - `/about` — short introduction and learning principles
 
-Visual system: gray paper surfaces, bold black typography, thin framed panels, green and lavender experiment pages, cactus illustrations, and torn paper transitions inspired by the supplied reference. Global styles live in `app/globals.css`; reusable components in `components/`. English content reflects the supplied brief. Identity currently uses Barış; no unprovided contact details or credentials are fabricated.
+Visual system: gray paper surfaces, bold black typography, thin framed panels, neutral and lavender experiment pages, ink illustrations of cacti, game objects, progression, and rewards, and torn paper transitions inspired by the supplied reference. Global styles live in `app/globals.css`; reusable components in `components/`. English content reflects the supplied brief. Identity currently uses Barış; no unprovided contact details or credentials are fabricated.
