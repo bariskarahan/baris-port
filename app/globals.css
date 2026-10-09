@@ -118,15 +118,22 @@
 @media(max-width:800px){.hero{gap:28px}.world-image-link{margin-block:20px}.world-routes{grid-template-columns:repeat(2,minmax(0,1fr))}.world-routes a:nth-child(2){border-right:0}.world-routes a:nth-child(-n+2){border-bottom:1px solid var(--line)}.compact-art .notebook-art{height:145px;width:140px}.card-art{height:255px}.motif.large>.notebook-art{height:255px}}
 @media(max-width:600px){.hero{padding-block:32px 20px}.hero-note{border-left:0;border-top:1px solid var(--line);padding:20px 0 0;max-width:none}.hero-note p{margin-top:12px}.world-section{margin-bottom:32px}.world-heading{gap:14px;padding-top:20px}.world-heading h2{font-size:25px}.world-heading>.small-link{font-size:12px}.world-heading .eyebrow{font-size:10px}.world-image-link{width:calc(100% + 16px);max-width:none;margin-left:-8px}.world-routes a{padding:14px 12px}.world-routes strong{font-size:13px}.world-routes span{font-size:9px}.compact-art .notebook-art{height:165px;width:155px}.card-art{height:265px}.motif.large>.notebook-art{height:250px}.experiment-art{height:255px}}
 
-/* Native language names and local vector flags remain clear on small screens. */
+/* A compact disclosure holds the language links without shifting the header. */
 .header-tools{display:flex;align-items:center;gap:24px}
-.language-switcher{display:flex;align-items:center;gap:6px}
-.language-switcher a{display:flex;align-items:center;gap:7px;min-height:40px;padding:6px 9px;border:1px solid transparent;font-size:12px;line-height:1.4;white-space:nowrap}
-.language-switcher a:hover{border-color:var(--line);background:var(--paper)}
-.language-switcher a[aria-current]{border-color:#a87530;background:var(--peach)}
+.language-switcher{position:relative;flex-shrink:0}
+.language-trigger{display:flex;align-items:center;gap:7px;min-height:40px;padding:7px 9px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:12px;line-height:1.4}
+.language-trigger:hover,.language-trigger[aria-expanded=true]{border-color:#a87530;background:var(--peach)}
 .language-flag{display:block;width:24px;height:16px;flex-shrink:0;overflow:hidden}
-.language-short{display:none}
+.language-chevron{width:10px;height:7px;margin-left:2px;transition:transform .15s}
+.language-trigger[aria-expanded=true] .language-chevron{transform:rotate(180deg)}
+.language-popover{position:absolute;z-index:30;right:0;top:calc(100% + 8px);width:190px;padding:8px;border:1px solid var(--line);background:var(--paper);box-shadow:3px 4px 0 #1112}
+.language-popover[hidden]{display:none}
+.language-popover-label{display:block;padding:6px 9px 8px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.language-popover a{display:flex;align-items:center;gap:10px;min-height:44px;padding:9px;border:1px solid transparent;font-size:14px;line-height:1.4;white-space:nowrap}
+.language-popover a:hover{border-color:var(--line);background:var(--ground)}
+.language-popover a[aria-current]{border-color:#a87530;background:var(--peach)}
+.language-check{margin-left:auto;width:14px;height:12px}
 @media(max-width:1100px){.header-tools{gap:0}.site-header nav{gap:24px}}
-@media(max-width:800px){.site-header{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;padding-block:14px}.header-tools{grid-column:2;grid-row:1;justify-self:end}.site-header>nav{grid-column:1/-1;grid-row:2;justify-content:center;gap:28px}.language-switcher a{min-height:40px}.site-header nav a{font-size:14px;padding-block:6px}.wordmark{font-size:34px}}
-@media(max-width:520px){.language-full{display:none}.language-short{display:inline}.site-header{gap:5px 12px}.language-switcher{gap:4px}.language-switcher a{padding:6px 8px}.site-header>nav{justify-content:space-between;gap:16px}.site-header nav a{font-size:13px}.wordmark{font-size:31px}}
+@media(max-width:800px){.site-header{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;padding-block:14px}.header-tools{grid-column:2;grid-row:1;justify-self:end}.site-header>nav{grid-column:1/-1;grid-row:2;justify-content:center;gap:28px}.site-header nav a{font-size:14px;padding-block:6px}.wordmark{font-size:34px}}
+@media(max-width:520px){.site-header{gap:5px 12px}.site-header>nav{justify-content:space-between;gap:16px}.site-header nav a{font-size:13px}.wordmark{font-size:31px}}
 .card-top .eyebrow{white-space:normal;min-width:0}

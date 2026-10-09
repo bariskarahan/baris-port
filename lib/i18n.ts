@@ -12,7 +12,7 @@ export function localePath(path: string, locale: Locale) {
 
 const turkish: Record<string, string> = {
   'thinking': 'düşünceler', 'experiments': 'deneyler', 'about': 'hakkımda',
-  'Main navigation': 'Ana menü', 'Barış home': 'Barış ana sayfa', 'Language': 'Dil',
+  'Main navigation': 'Ana menü', 'Barış home': 'Barış ana sayfa', 'Language': 'Dil', 'Change language': 'Dili değiştir',
   'independent learning / v0.1': 'bağımsız öğrenme / v0.1', 'skip to content': 'içeriğe geç',
   'play. notice. question. test.': 'oyna. fark et. sorgula. dene.',
   'play. notice.': 'oyna. fark et.', 'question. test.': 'sorgula. dene.',
