@@ -32,6 +32,6 @@ Add notes to `lib/content.ts`. Each article includes a unique slug, category, su
 - `/experiments` — question, hypothesis, setup, metric, result, lesson
 - `/about` — short introduction and learning principles
 
-Visual system: gray paper surfaces, bold black typography, thin framed panels, neutral and lavender experiment pages, ink illustrations of cacti and research-informed mobile puzzles, progression tracks, and team events, and torn paper transitions inspired by the supplied reference. Global styles live in `app/globals.css`; reusable components in `components/`. English content reflects the supplied brief. Identity currently uses Barış; no unprovided contact details or credentials are fabricated.
+Visual system: gray paper surfaces, bold black typography, thin framed panels, neutral and lavender experiment pages, flat hand-drawn comic illustrations of cacti and research-informed mobile puzzles, progression tracks, and team events, and torn paper transitions inspired by the supplied reference. Global styles live in `app/globals.css`; reusable components in `components/`. English content reflects the supplied brief. Identity currently uses Barış; no unprovided contact details or credentials are fabricated.
 
 Illustration subjects and source links are recorded in `docs/mobile-gaming-visual-research.md` and `lib/visuals.ts`. Artwork is original and conceptual; it does not depict official screenshots or establish the sample hypotheses as findings.

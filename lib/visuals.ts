@@ -7,6 +7,7 @@ export const illustrations = {
 export type IllustrationKey = keyof typeof illustrations;
 
 export const visualReferences = [
+  { name: 'DeGods · illustration style', url: 'https://degods.com/', note: 'Flat comic colors, hand-inked outlines, and cactus accents. Visual style reference.' },
   { name: 'Dream Games · Royal Match', url: 'https://dreamgames.helpshift.com/hc/en/3-royal-match/faq/21-how-can-i-obtain-and-use-coins/', note: 'Coins, boosters, extra moves and lives.' },
   { name: 'King · Candy Crush Saga', url: 'https://candycrush.zendesk.com/hc/en-us/articles/360000750998-What-are-Boosters', note: 'Puzzle goals and power-ups before, during and after a level.' },
   { name: 'Scopely · MONOPOLY GO!', url: 'https://www.scopely.com/en/news/team-up-with-friends-and-conquer-the-monopoly-go-race-track-with-tycoon-racers', note: 'Four-player teams, shared milestones and event rewards.' },

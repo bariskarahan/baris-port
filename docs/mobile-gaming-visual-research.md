@@ -37,3 +37,11 @@ Placement: small-group experiment on the homepage and experiments page. Replace 
 ## Art direction
 
 Keep the ink and stipple style of the cactus; gray and black paper surfaces, muted lavender details, no green interface theme. Produce three original conceptual illustrations. They are neither official screenshots nor exact replicas. Keep the cactus as the notebook's visual signature. Captions name the systems being studied; references live in a compact expandable list on the About page. Use local optimized WebP files and lazy-load secondary illustrations.
+
+## Drawing style revision
+
+The user's DeGods reference sets the drawing style: flat 2D color fills, slightly irregular black outlines, sparse dots, and restrained cel shadows. Replace ornate metallic, engraved, and sculptural treatments across all three mobile illustrations and the cactus. Keep the researched subject mappings. DeGods is a stylistic reference, not the source of game-mechanics claims or an affiliation.
+
+- https://degods.com/
+
+Natural green is confined to cactus stalks. Interface surfaces remain gray and black, with lavender accents.
