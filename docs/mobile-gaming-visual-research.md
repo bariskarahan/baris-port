@@ -34,26 +34,22 @@ Scopely's June 2024 Tycoon Racers announcement documents teams of four, collecti
 
 Placement: small-group experiment on the homepage and experiments page. Replace the progression illustration previously attached to the social question.
 
-## Art direction
+## Current art direction: supplied DeGods world map
 
-Keep the ink and stipple style of the cactus; gray and black paper surfaces, muted lavender details, no green interface theme. Produce three original conceptual illustrations. They are neither official screenshots nor exact replicas. Keep the cactus as the notebook's visual signature. Captions name the systems being studied; references live in a compact expandable list on the About page. Use local optimized WebP files and lazy-load secondary illustrations.
+The user's latest attached map is the primary drawing and color reference. Its distinctive qualities are thin, irregular dark ink lines; slightly crooked perspective; flat amber, turquoise, coral, mint and lilac color areas; tiny buildings, travelers and vegetation; and a wavy amber picture frame. Illustration direction now uses miniature scenes rather than isolated oversized phone/inventory stickers.
 
-## Drawing style revision
+Preserve the notebook's gray page surfaces and black typography. Use amber actions, muted turquoise social/return panels and warm neutral economy panels. Interface surfaces do not use a green theme; natural green belongs to the illustrated landscapes and cactus. Palette values are chosen from the supplied visual reference, not claimed as extracted live CSS.
 
-The user's DeGods reference sets the drawing style: flat 2D color fills, slightly irregular black outlines, sparse dots, and restrained cel shadows. Replace ornate metallic, engraved, and sculptural treatments across all three mobile illustrations and the cactus. Keep the researched subject mappings. DeGods is a stylistic reference, not the source of game-mechanics claims or an affiliation.
+## Original scenes and placement
+
+- **World map:** a new imaginary island connecting a puzzle garden, stepped progression mountain, reward market, cooperative harbor and event fairground. The homepage map is presented prominently inside a drawn amber frame. An accessible full-size image link lets readers inspect details; four ordinary navigation links lead to existing notes and the small-group test plan.
+- **Puzzle garden:** colorful match-three tiles, a booster and tiny travelers. Use on the onboarding note and selected thinking panel.
+- **Progression mountain:** a winding trail, chest checkpoints and an explorer. Use on the progression note.
+- **Reward market:** separate coins, heart lives and boosters in miniature stalls. Use on the economy note and recognition-versus-currency experiment.
+- **Cooperative harbor:** four travelers building toward a shared goal. Use on the social experiment. This visual does not establish a retention effect.
+- **Return island:** a manageable short path to a welcoming cabin. Use on the setback/retention note and comeback experiment. The illustration represents a hypothesis, not a verified intervention.
+- **Learning notebook:** a sketched map, magnifying glass, phone and cactus, drawn in the same line style and colors. Use on About, the thinking introduction and the homepage practice section.
+
+The user-provided DeGods image informs style only. The site's artwork is newly generated conceptual work, without DeGods logos or official game screenshots. Preserve sample labels, research-source links, archive searching and topic filters. Use local optimized WebP files; prioritize the homepage map and lazy-load secondary scenes.
 
 - https://degods.com/
-
-Natural green is confined to cactus stalks. Interface surfaces remain gray and black, with lavender accents.
-
-## Palette and illustration expansion
-
-Use the supplied DeGods screenshot and its public page as the visual reference: a #d7d7d7 page ground, #e7e7e7 paper, thin #bdbdbd borders, and #dddcef lavender panels. Violet actions use #8357eb for white-label contrast. These are reference-based implementation tones, not a claim of extracting the live site's CSS. Green remains confined to the original cactus artwork.
-
-Preserve the approved mobile puzzle, progression and team drawings. Add three original illustrations in the same flat comic style:
-
-- **Economy:** separate life, booster and gem inventory cards, a coin pouch and a reward ticket. Use on the economy note and the currency-versus-status experiment. This replaces a cropped reuse of the progression drawing.
-- **Return:** a short quest path, checklist calendar and return arrow. Use on the setback/retention note and comeback experiment. This represents a proposed manageable return goal; it is not evidence that calendar mechanics improve retention.
-- **Learning notebook:** puzzle sketches, a magnifying glass, pencil and angular crystals. Use on About, the thinking introduction and the homepage practice section.
-
-Increase illustration presence in the thinking and experiments introductions while preserving the notebook content, sample labels and archive behavior. Optimize additional transparent assets as WebP and lazy-load secondary images.

@@ -9,8 +9,8 @@ export function Footer(){return <footer className="notebook-footer">
     <p className="footer-manifesto">We tried some shit.<br/>We learned some shit.<br/>Now we’re trying some new shit.</p>
     <div className="footer-credit">© {new Date().getFullYear()} barış.<br/><span>always a work in progress.</span></div>
   </div>
-  <img className="footer-cactus cactus-left" src="/images/footer-cactus.png" alt="" aria-hidden="true" width="150" height="200"/>
-  <img className="footer-cactus cactus-right" src="/images/footer-cactus.png" alt="" aria-hidden="true" width="150" height="200"/>
+  <img className="footer-cactus cactus-left" src="/images/footer-cactus.webp" alt="" aria-hidden="true" width="150" height="200"/>
+  <img className="footer-cactus cactus-right" src="/images/footer-cactus.webp" alt="" aria-hidden="true" width="150" height="200"/>
 </footer>}
 export function Label({children}:{children:React.ReactNode}){return <span className="eyebrow">{children}</span>}
 export function NotebookArt({kind='match',className='',priority=false}:{kind?:string;className?:string;priority?:boolean}){
