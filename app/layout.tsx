@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '@fontsource/playfair-display/900.css';
 import './globals.css';
 import { Header, Footer } from '@/components/site';
 import { getLocale } from '@/lib/request-locale';

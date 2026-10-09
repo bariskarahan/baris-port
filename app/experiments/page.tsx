@@ -1,6 +1,9 @@
 import { getLocale } from '@/lib/request-locale';
 import { translate } from '@/lib/i18n';
-import { getExperiments } from '@/lib/content-tr';
-import { Label, NotebookArt } from '@/components/site';
+import { getEntries } from '@/lib/entries';
+import ExperimentGrid from '@/components/experiment-grid';
 export async function generateMetadata(){return {title:translate(await getLocale(),'experiments')}}
-export default async function Experiments(){const locale=await getLocale();const t=(text:string)=>translate(locale,text);const experiments=getExperiments(locale);return <main id="main" className="shell page-main"><div className="page-intro"><div><Label>{t("02 / the experiment notebook")}</Label><h1>{t("what if?")}<br/>{t("let’s find out.")}</h1></div><div className="intro-aside"><NotebookArt kind="team" className="intro-art" priority/><p>{t("Questions about real human behavior, turned into testable ideas.")}<span className="intro-meta">{t("Sample plans. No experiments run yet.")}</span></p></div></div><div className="experiments-list">{experiments.map(e=><article id={e.slug} key={e.id} className="experiment-detail"><div className="experiment-overview"><div className="experiment-detail-head"><Label>{t("experiment")} {e.id} / {t(e.tag)}</Label><span className="status">{t("proposed · not run")}</span></div><h2>{e.title}</h2><p className="experiment-question">{e.question}</p><NotebookArt kind={e.visual} className="experiment-art"/><span className="experiment-number" aria-hidden="true">{e.id}</span></div><dl>{[['hypothesis',e.hypothesis],['setup',e.setup],['metric',e.metric],['result',t('Not run. No outcome or supporting data yet.')],['lesson to look for',e.lesson]].map(([term,value])=><div key={term}><dt>{t(term)}</dt><dd>{value}</dd></div>)}</dl></article>)}</div><p className="closing-note">{t("A good test leaves you with a better question.")}</p></main>}
+export default async function Experiments(){const locale=await getLocale();const t=(text:string)=>translate(locale,text);return <main id="main" className="lab-page">
+  <div className="lab-intro shell"><h1>{t('Experiments')}</h1><p className="serif-quote">“{t('i tried some things.')}”</p></div>
+  <section className="torn-band"><div className="shell"><ExperimentGrid entries={getEntries(locale)} locale={locale}/><p className="lab-note">{t('Analyses and test plans are illustrative samples. No experiment has been run yet.')}</p></div></section>
+</main>}

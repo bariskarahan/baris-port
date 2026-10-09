@@ -83,6 +83,18 @@ const turkish: Record<string, string> = {
   'note not found': 'yazı bulunamadı',
   'barış — a notebook on games & people': 'barış — oyunlar ve insanlar üzerine bir defter',
   'Learning mobile game product thinking through observations, teardowns, and proposed experiments.': 'Gözlemler, incelemeler ve deney önerileriyle mobil oyunlarda ürün düşüncesini öğreniyorum.',
+  'Experiments': 'Deneyler', 'i tried some things.': 'bir şeyler denedim.',
+  'Analyses and test plans are illustrative samples. No experiment has been run yet.': 'Analizler ve deney planları açıklayıcı örneklerdir. Henüz hiçbir deney yapılmadı.',
+  'Search experiments...': 'Deneylerde ara...', 'Search experiments': 'Deneylerde ara', 'Filter by type': 'Türe göre filtrele',
+  'All': 'Tümü', 'Analyses': 'Analizler', 'Tests': 'Testler', 'Sort': 'Sırala',
+  'Date: New to Old': 'Tarih: Yeniden eskiye', 'Date: Old to New': 'Tarih: Eskiden yeniye',
+  'analysis': 'analiz', 'test': 'test', 'nothing here yet.': 'burada henüz bir şey yok.', 'show everything': 'hepsini göster',
+  'back to experiments': 'deneylere dön', 'Close': 'Kapat',
+  'A hand-drawn island connecting a puzzle garden, progression mountain, reward market and cooperative harbor.': 'Bulmaca bahçesini, ilerleme dağını, ödül pazarını ve ortak limanı birbirine bağlayan, elde çizilmiş bir ada.',
+  'BAH-RISH': 'BA-RIŞ', 'NOUN': 'İSİM', 'a notebook on games & people, 2026': 'oyunlar ve insanlar üzerine bir defter, 2026',
+  'Read the notes': 'Yazıları oku', 'NEW': 'YENİ', 'About barış': 'Barış hakkında',
+  'Latest experiments': 'Son deneyler', 'see all': 'tümünü gör',
+  'I played some games.': 'Biraz oyun oynadım.', 'I asked some questions.': 'Birkaç soru sordum.', 'Now I’m testing the answers.': 'Şimdi cevapları test ediyorum.',
 };
 
 export function translate(locale: Locale, text: string) {

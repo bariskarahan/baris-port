@@ -13,8 +13,8 @@ export default function Header({ locale = 'en' }: { locale?: Locale }) {
   const t = (text: string) => translate(locale, text);
   return <header className="site-header shell">
     <Link href={localePath('/', locale)} className="wordmark" aria-label={t('Barış home')}>barış<span>.</span></Link>
-    <nav aria-label={t('Main navigation')}>{[['/thinking','thinking'],['/experiments','experiments'],['/about','about']].map(([href,label])=><Link href={localePath(href,locale)} key={href} aria-current={pathname.startsWith(href)?'page':undefined}>{t(label)}</Link>)}</nav>
-    <div className="header-tools"><span className="edition">{t('independent learning / v0.1')}</span><div className="language-switcher" role="group" aria-label={t('Language')}>
+    <nav aria-label={t('Main navigation')}>{[['/experiments','experiments'],['/thinking','thinking'],['/about','about']].map(([href,label])=><Link href={localePath(href,locale)} key={href} aria-current={pathname.startsWith(href)?'page':undefined}>{t(label)}</Link>)}</nav>
+    <div className="header-tools"><div className="language-switcher" role="group" aria-label={t('Language')}>
       {(['en','tr'] as const).map(language=><a key={language} href={`${localePath(pathname,language)}${search?`?${search}`:''}`} lang={language} hrefLang={language} aria-label={language==='en'?'English':'Türkçe'} aria-current={language===locale?'true':undefined} onClick={event=>{
         document.cookie=`${languageCookie}=${language}; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
         event.currentTarget.href+=window.location.hash;

@@ -2,12 +2,13 @@ import { LocalizedLink as Link } from './localized-link';
 import type { Article } from '@/lib/content';
 import { illustrations, getIllustrationLabel, type IllustrationKey } from '@/lib/visuals';
 import { translate, type Locale } from '@/lib/i18n';
+import type { Entry } from '@/lib/entries';
 export { default as Header } from './header';
 export function Footer({locale='en'}:{locale?:Locale}){const t=(text:string)=>translate(locale,text);return <footer className="notebook-footer">
   <div className="footer-tear" aria-hidden="true"/>
   <div className="shell footer-content">
-    <div className="footer-identity"><p>{t('play. notice. question. test.')}</p><span>{t('an independent learning notebook by barış.')}</span></div>
-    <p className="footer-manifesto">{t('We tried some shit.')}<br/>{t('We learned some shit.')}<br/>{t('Now we’re trying some new shit.')}</p>
+    <div className="footer-identity"><p className="footer-logo">barış.</p><span>{t('play. notice. question. test.')}</span></div>
+    <p className="footer-manifesto">{t('I played some games.')}<br/>{t('I asked some questions.')}<br/>{t('Now I’m testing the answers.')}</p>
     <div className="footer-credit">© {new Date().getFullYear()} barış.<br/><span>{t('always a work in progress.')}</span></div>
   </div>
   <img className="footer-cactus cactus-left" src="/images/footer-cactus.webp" alt="" aria-hidden="true" width="150" height="200"/>
@@ -25,3 +26,4 @@ export function Motif({kind='match',large=false,visual,locale='en'}:{kind?:strin
 }
 export function ArticleCard({article,locale='en'}:{article:Article;locale?:Locale}){const t=(text:string)=>translate(locale,text);return <Link locale={locale} href={`/thinking/${article.slug}`} className="article-card"><div className="card-top"><Label>{t('note')} {article.number} / {t(article.category)}</Label><span>{article.readTime}</span></div><div className={`card-art art-frame-${article.visual}`}><NotebookArt kind={article.visual}/><span className="illustration-caption">{getIllustrationLabel(article.visual,locale)}</span></div><h3>{article.title}</h3><p>{article.summary}</p><div className="card-bottom"><span>{article.game}</span><span className="read-link">{t('read the note')}</span></div></Link>}
 export function SectionHeading({title,href,label='view all',locale='en'}:{title:string;href?:string;label?:string;locale?:Locale}){return <div className="section-heading"><h2>{title}</h2>{href&&<Link locale={locale} className="small-link" href={href}>{translate(locale,label)}</Link>}</div>}
+export function LabCard({entry,tone=0,locale='en'}:{entry:Entry;tone?:number;locale?:Locale}){const t=(text:string)=>translate(locale,text);return <Link locale={locale} href={entry.href} className="lab-card"><div className="lab-card-head"><h3>{entry.title}</h3><span className={`lab-kind lab-kind-${entry.kind}`}>{t(entry.kind)}</span></div><div className={`lab-card-art lab-tone-${tone%4}`}><NotebookArt kind={entry.visual}/></div></Link>}

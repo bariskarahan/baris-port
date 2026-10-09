@@ -1,6 +1,6 @@
 # barış — a notebook on games & people
 
-A personal learning publication for mobile game product thinking. Built with Next.js App Router, TypeScript, and Tailwind CSS. No database, authentication, CMS, or external fonts.
+A personal learning publication for mobile game product thinking. Built with Next.js App Router, TypeScript, and Tailwind CSS. No database, authentication or CMS. The one display font (Playfair Display, via `@fontsource`) is self-hosted, so no requests go to external font services.
 
 ## Development
 
@@ -29,9 +29,10 @@ Add notes to `lib/content.ts`. Each article includes a unique slug, category, su
 - `/` — introduction, selected thinking, experiments, topics, about
 - `/thinking` — searchable archive with topic filters
 - `/thinking/[slug]` — analysis with section navigation
-- `/experiments` — question, hypothesis, setup, metric, result, lesson
+- `/experiments` — the hub: analyses and tests in one searchable, filterable grid
+- `/experiments/[slug]` — a test plan: question, hypothesis, setup, metric, result, lesson
 - `/about` — short introduction and learning principles
 
-Visual system: gray paper surfaces, bold black typography, thin framed panels, neutral and lavender experiment pages, flat hand-drawn comic illustrations of cacti and research-informed mobile puzzles, progression tracks, and team events, and torn paper transitions inspired by the supplied reference. Global styles live in `app/globals.css`; reusable components in `components/`. English content reflects the supplied brief. Identity currently uses Barış; no unprovided contact details or credentials are fabricated.
+Visual system (DeGods-led): neutral gray paper, black grotesk headings (Helvetica Neue stack), a fat serif wordmark, italic serif accents, a white-framed hero image with a full-screen viewer, sticker buttons, flat two-column experiment cards, flat hand-drawn comic illustrations of cacti and research-informed mobile puzzles, progression tracks, and team events, and torn paper transitions inspired by the supplied reference. Global styles live in `app/globals.css`; reusable components in `components/`. English content reflects the supplied brief. Identity currently uses Barış; no unprovided contact details or credentials are fabricated.
 
 Illustration subjects and source links are recorded in `docs/mobile-gaming-visual-research.md` and `lib/visuals.ts`. Artwork is original and conceptual; it does not depict official screenshots or establish the sample hypotheses as findings.
