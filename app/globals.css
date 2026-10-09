@@ -137,3 +137,42 @@
 @media(max-width:800px){.site-header{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;padding-block:14px}.header-tools{grid-column:2;grid-row:1;justify-self:end}.site-header>nav{grid-column:1/-1;grid-row:2;justify-content:center;gap:28px}.site-header nav a{font-size:14px;padding-block:6px}.wordmark{font-size:34px}}
 @media(max-width:520px){.site-header{gap:5px 12px}.site-header>nav{justify-content:space-between;gap:16px}.site-header nav a{font-size:13px}.wordmark{font-size:31px}}
 .card-top .eyebrow{white-space:normal;min-width:0}
+
+/* A visual sketchbook connects the game mechanics to original drawn scenes. */
+.hero-note{max-width:460px;padding:20px 24px 24px}
+.hero-playbench{display:block;width:100%;height:auto;margin:12px auto 4px}
+.hero-note p{font-size:17px;line-height:1.55;margin:12px 0 18px}
+.game-sketchbook{margin-block:0 64px}
+.sketchbook-heading{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:end;border-top:1px solid var(--line);padding-top:30px;margin-bottom:28px}
+.sketchbook-heading h2{font-size:clamp(30px,3.5vw,46px);letter-spacing:-1.8px;margin:12px 0 0}
+.sketchbook-heading>p{font-size:16px;color:#444;line-height:1.65;max-width:420px;margin:0;justify-self:end}
+.game-sketch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.game-sketch{border:1px solid var(--line);background:var(--paper);min-width:0;display:flex;flex-direction:column}
+.sketch-image-link{position:relative;display:block;background:var(--aqua);border-bottom:1px solid var(--line);padding:18px 14px;overflow:hidden}
+.sketch-tone-peach .sketch-image-link{background:var(--peach)}
+.sketch-tone-lilac .sketch-image-link{background:var(--lilac)}
+.sketch-image-link img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;transition:transform .2s}
+.sketch-image-link:hover img{transform:scale(1.035)}
+.sketch-number{position:absolute;top:12px;left:14px;font-size:11px;letter-spacing:.08em;z-index:1;color:#444}
+.sketch-enlarge{position:absolute;bottom:12px;right:14px;font-size:18px;line-height:1}
+.sketch-open-icon{display:inline-block;width:12px;height:12px;vertical-align:-2px}
+.sketch-enlarge .sketch-open-icon{width:18px;height:18px;vertical-align:0}
+.sketch-copy{padding:22px;display:flex;flex-direction:column;flex:1;align-items:start}
+.sketch-copy .eyebrow{font-size:10px;line-height:1.65;color:#555}
+.sketch-copy h3{font-size:28px;letter-spacing:-1px;margin:12px 0 14px;line-height:1.15}
+.sketch-copy p{font-size:15px;line-height:1.65;color:#444;margin:0 0 16px}
+.sketch-copy .sketch-question{color:var(--ink);font-size:16px;border-top:1px solid var(--line);padding-top:16px;margin-top:auto;font-weight:600}
+.sketch-source{font-size:11px;line-height:1.7;color:#555;margin-bottom:18px}
+.sketch-source a{text-decoration:underline;text-underline-offset:3px}
+.sketch-copy>.small-link{font-size:13px}
+.sketchbook-note{font-size:12px;color:#555;line-height:1.7;margin:20px 0 0}
+.article-game-study{padding:28px;border-top:1px solid var(--line)}
+.article-game-study>.eyebrow{margin-bottom:18px}
+.sketch-inline{display:grid;grid-template-columns:1fr 1fr}
+.sketch-inline .sketch-image-link{display:flex;align-items:center;border-bottom:0;border-right:1px solid var(--line)}
+.sketch-inline .sketch-source{margin-bottom:0}
+.article-body .sketch-copy h3{font-size:27px;line-height:1.15}
+.article-body .sketch-copy p{font-size:15px}
+@media(max-width:1100px){.sketch-copy{padding:20px}.sketch-copy h3{font-size:25px}.game-sketch-grid{gap:20px}.hero{gap:40px}.sketchbook-heading{gap:28px}.sketch-inline{grid-template-columns:1fr}.sketch-inline .sketch-image-link{border-right:0;border-bottom:1px solid var(--line)}.sketch-inline .sketch-image-link img{max-height:330px}}
+@media(max-width:800px){.game-sketch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sketchbook-heading{grid-template-columns:1fr;gap:18px}.sketchbook-heading>p{justify-self:start;max-width:560px}.hero{gap:28px}.hero-note{padding:18px}.hero-note p{font-size:16px}.hero-playbench{margin-block:12px}.game-sketchbook{margin-bottom:44px}.sketchbook-heading h2{letter-spacing:-1px}}
+@media(max-width:600px){.hero-note{padding:20px;border:1px solid var(--line);max-width:none;justify-self:stretch}.hero-playbench{width:100%;max-width:420px}.hero-note p{font-size:17px}.sketchbook-heading{padding-top:24px;margin-bottom:22px}.sketchbook-heading .eyebrow{font-size:10px}.sketchbook-heading>p{font-size:15px}.game-sketch-grid{grid-template-columns:1fr;gap:18px}.sketch-image-link img{max-height:380px}.sketch-copy h3{font-size:29px}.sketch-copy .eyebrow{font-size:11px}.article-game-study{padding:22px}.sketch-copy{padding:22px}.article-body .sketch-copy h3{font-size:27px}.sketchbook-note{font-size:11px}}
