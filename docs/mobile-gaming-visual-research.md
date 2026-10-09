@@ -45,3 +45,15 @@ The user's DeGods reference sets the drawing style: flat 2D color fills, slightl
 - https://degods.com/
 
 Natural green is confined to cactus stalks. Interface surfaces remain gray and black, with lavender accents.
+
+## Palette and illustration expansion
+
+Use the supplied DeGods screenshot and its public page as the visual reference: a #d7d7d7 page ground, #e7e7e7 paper, thin #bdbdbd borders, and #dddcef lavender panels. Violet actions use #8357eb for white-label contrast. These are reference-based implementation tones, not a claim of extracting the live site's CSS. Green remains confined to the original cactus artwork.
+
+Preserve the approved mobile puzzle, progression and team drawings. Add three original illustrations in the same flat comic style:
+
+- **Economy:** separate life, booster and gem inventory cards, a coin pouch and a reward ticket. Use on the economy note and the currency-versus-status experiment. This replaces a cropped reuse of the progression drawing.
+- **Return:** a short quest path, checklist calendar and return arrow. Use on the setback/retention note and comeback experiment. This represents a proposed manageable return goal; it is not evidence that calendar mechanics improve retention.
+- **Learning notebook:** puzzle sketches, a magnifying glass, pencil and angular crystals. Use on About, the thinking introduction and the homepage practice section.
+
+Increase illustration presence in the thinking and experiments introductions while preserving the notebook content, sample labels and archive behavior. Optimize additional transparent assets as WebP and lazy-load secondary images.

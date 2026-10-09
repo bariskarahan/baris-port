@@ -14,7 +14,7 @@ export function Footer(){return <footer className="notebook-footer">
 </footer>}
 export function Label({children}:{children:React.ReactNode}){return <span className="eyebrow">{children}</span>}
 export function NotebookArt({kind='match',className='',priority=false}:{kind?:string;className?:string;priority?:boolean}){
-  const key:IllustrationKey=kind==='team'?'team':kind==='coins'||kind==='economy'?'economy':kind==='journey'||kind==='steps'?'journey':'puzzle';
+  const key:IllustrationKey=Object.prototype.hasOwnProperty.call(illustrations,kind)?kind as IllustrationKey:kind==='coins'?'economy':kind==='steps'?'journey':'puzzle';
   return <img className={`notebook-art art-${key} ${className}`} src={`/images/${illustrations[key].file}`} alt="" aria-hidden="true" width="400" height="400" loading={priority?'eager':'lazy'}/>;
 }
 export function Motif({kind='match',large=false,visual}:{kind?:string;large?:boolean;visual?:IllustrationKey}){
