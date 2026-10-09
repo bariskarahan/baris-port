@@ -68,7 +68,7 @@
 @media(max-width:800px){.about-art .about-mobile-art{height:340px}.visual-source-notes ul{grid-template-columns:1fr}}
 @media(max-width:520px){.about-art .about-mobile-art{height:330px;margin-top:15px}.visual-source-notes{padding:16px 20px}.card-art{height:245px}}
 
-/* Supplied world-map reference: gray paper, amber actions and turquoise details. */
+/* Neutral paper surfaces and restrained amber actions. */
 .button,.mini-button{background:var(--amber);border-color:#a87530;color:var(--ink)}
 .button:hover,a:hover>.mini-button{background:var(--amber-hover);border-color:#79521f;color:var(--ink)}
 .hero-note,.about-art{background:var(--paper)}
@@ -90,22 +90,10 @@
 @media(max-width:800px){.intro-aside{max-width:none;justify-self:stretch;display:grid;grid-template-columns:180px 1fr;align-items:center;gap:24px}.intro-aside .intro-art{height:170px;margin:0}.intro-aside>p{font-size:17px}.home-about{grid-template-columns:170px 1fr;gap:24px}.practice-art .notebook-art{height:150px}.practice-copy>p{font-size:30px}.about-art .about-mobile-art{height:300px}}
 @media(max-width:520px){.intro-aside{grid-template-columns:1fr;gap:18px}.intro-aside .intro-art{height:180px;max-width:250px;justify-self:start}.home-about{grid-template-columns:1fr;gap:18px}.practice-art .notebook-art{height:175px;width:230px}.practice-copy>p{font-size:28px;letter-spacing:-.8px}.about-art .about-mobile-art{height:300px}}
 
-/* An illustrated world introduces the connected notebook topics. */
+/* Illustration sizes for cards and article diagrams. */
 .hero{padding-block:50px 38px;align-items:center}
 .hero-note{background:transparent;border:0;border-left:1px solid var(--line);padding:8px 0 8px 28px;max-width:370px}
 .hero-note p{margin:16px 0 24px}
-.world-section{margin-bottom:52px}
-.world-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;padding-block:20px 0}
-.world-heading h2{font-size:30px;letter-spacing:-1px;margin:8px 0 0}
-.world-heading>.small-link{white-space:nowrap}
-.world-image-link{display:block;width:min(100%,1080px);margin:18px auto}
-.world-art{display:block;width:100%;height:auto}
-.world-routes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);background:var(--paper)}
-.world-routes a{padding:18px 20px;border-right:1px solid var(--line);transition:background .15s;min-width:0}
-.world-routes a:last-child{border-right:0}
-.world-routes a:hover{background:var(--peach)}
-.world-routes span{display:block;text-transform:uppercase;font-size:10px;line-height:1.6;letter-spacing:.045em;color:var(--muted);margin-bottom:8px}
-.world-routes strong{display:block;font-size:15px;line-height:1.4}
 .card-art{height:275px;padding:12px 16px}
 .card-art .notebook-art{height:calc(100% - 28px)}
 .article-card:hover .card-art .notebook-art{transform:scale(1.04)}
@@ -114,9 +102,9 @@
 .compact-art .notebook-art{height:155px;width:155px}
 .experiment-art{height:275px}
 .experiment-detail:nth-child(3) .experiment-overview{background:var(--peach)}
-@media(max-width:1100px){.compact-art .notebook-art{height:120px;width:110px}.world-routes a{padding:16px}.world-routes strong{font-size:14px}}
-@media(max-width:800px){.hero{gap:28px}.world-image-link{margin-block:20px}.world-routes{grid-template-columns:repeat(2,minmax(0,1fr))}.world-routes a:nth-child(2){border-right:0}.world-routes a:nth-child(-n+2){border-bottom:1px solid var(--line)}.compact-art .notebook-art{height:145px;width:140px}.card-art{height:255px}.motif.large>.notebook-art{height:255px}}
-@media(max-width:600px){.hero{padding-block:32px 20px}.hero-note{border-left:0;border-top:1px solid var(--line);padding:20px 0 0;max-width:none}.hero-note p{margin-top:12px}.world-section{margin-bottom:32px}.world-heading{gap:14px;padding-top:20px}.world-heading h2{font-size:25px}.world-heading>.small-link{font-size:12px}.world-heading .eyebrow{font-size:10px}.world-image-link{width:calc(100% + 16px);max-width:none;margin-left:-8px}.world-routes a{padding:14px 12px}.world-routes strong{font-size:13px}.world-routes span{font-size:9px}.compact-art .notebook-art{height:165px;width:155px}.card-art{height:265px}.motif.large>.notebook-art{height:250px}.experiment-art{height:255px}}
+@media(max-width:1100px){.compact-art .notebook-art{height:120px;width:110px}}
+@media(max-width:800px){.hero{gap:28px}.compact-art .notebook-art{height:145px;width:140px}.card-art{height:255px}.motif.large>.notebook-art{height:255px}}
+@media(max-width:600px){.hero{padding-block:32px 20px}.hero-note{border-left:0;border-top:1px solid var(--line);padding:20px 0 0;max-width:none}.hero-note p{margin-top:12px}.compact-art .notebook-art{height:165px;width:155px}.card-art{height:265px}.motif.large>.notebook-art{height:250px}.experiment-art{height:255px}}
 
 /* A compact disclosure holds the language links without shifting the header. */
 .header-tools{display:flex;align-items:center;gap:24px}

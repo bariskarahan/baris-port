@@ -10,16 +10,6 @@ export default async function Home(){const locale=await getLocale();const t=(tex
     <div><Label>{t("games, people & product")}</Label><h1>{t("play. notice.")}<br/>{t("question. test.")}</h1><p className="hero-signature">{t("an independent learning notebook by barış.")}</p></div>
     <div className="hero-note"><span className="note-index">{t("NO. 001 — AN OPEN NOTEBOOK")}</span><img className="hero-playbench" src="/images/game-playbench.webp" alt={locale==='tr' ? 'Bulmaca ekranlı amber telefon, küçük karakterler, güçlendiriciler ve kaktüsle çizilmiş özgün bir mobil oyun masası.' : 'An original hand-drawn mobile game workbench with an amber puzzle phone, tiny characters, boosters and a cactus.'} width="1536" height="1024" fetchPriority="high"/><p>{t("I play games, study the decisions behind them, and turn what I notice into questions worth testing.")}</p><Link locale={locale} href="/thinking" className="button">{t("open the notebook")}</Link></div>
   </section>
-  <section className="shell world-section" aria-labelledby="world-title">
-    <div className="world-heading"><div><Label>{t("the field map / mobile games")}</Label><h2 id="world-title">{t("a world of questions.")}</h2></div><a className="small-link" href="/images/notebook-world.webp" target="_blank" rel="noopener noreferrer">{t("look closer")}</a></div>
-    <a className="world-image-link" href="/images/notebook-world.webp" target="_blank" rel="noopener noreferrer" aria-label={t("Explore the illustrated world in full size")}><img className="world-art" src="/images/notebook-world.webp" alt={t("A hand-drawn island in an amber frame, connecting a puzzle garden, progression mountain, reward market and cooperative harbor.")} width="1536" height="1024" loading="lazy"/></a>
-    <nav className="world-routes" aria-label={t("Explore the field map")}>
-      <Link locale={locale} href="/thinking/royal-match-first-ten-minutes"><span>{t("01 / the puzzle garden")}</span><strong>{t("the first ten minutes")}</strong></Link>
-      <Link locale={locale} href="/thinking/progression-and-motivation"><span>{t("02 / the mountain trail")}</span><strong>{t("a reason to keep going")}</strong></Link>
-      <Link locale={locale} href="/thinking/fair-game-economy"><span>{t("03 / the reward market")}</span><strong>{t("what feels fair?")}</strong></Link>
-      <Link locale={locale} href="/experiments#small-groups"><span>{t("04 / the shared harbor")}</span><strong>{t("better together?")}</strong></Link>
-    </nav>
-  </section>
   <GameSketchbook locale={locale}/>
   <section className="shell home-board" aria-label={t("Inside the notebook")}>
     <Link locale={locale} className="feature-panel" href={`/thinking/${articles[0].slug}`}><div className="panel-heading"><Label>{t("01 / selected thinking")}</Label><span className="small-meta">{t("sample note")}</span></div><div className="feature-copy"><h2>{articles[0].title}</h2><p>{articles[0].summary}</p></div><Motif locale={locale}/><div className="panel-action"><span>{t("read the teardown")}</span><span>{articles[0].readTime}</span></div></Link>
