@@ -1,7 +1,6 @@
 import { getLocale } from '@/lib/request-locale';
 import { LocalizedLink as Link } from '@/components/localized-link';
 import { companies } from '@/lib/portfolio';
-import { PortfolioState } from '@/components/portfolio-elements';
 import { Label } from '@/components/site';
 
 export default async function Home() {
