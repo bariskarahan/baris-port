@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './portfolio.css';
 import { Header, Footer } from '@/components/site';
 import { getLocale } from '@/lib/request-locale';
 import { translate } from '@/lib/i18n';
