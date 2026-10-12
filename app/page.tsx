@@ -1,26 +1,57 @@
 import { getLocale } from '@/lib/request-locale';
-import { translate } from '@/lib/i18n';
 import { LocalizedLink as Link } from '@/components/localized-link';
-import { topics } from '@/lib/content';
-import { getArticles, getExperiments } from '@/lib/content-tr';
-import { Label, Motif, SectionHeading, ArticleCard, NotebookArt } from '@/components/site';
-import { GameSketchbook } from '@/components/game-sketchbook';
-import MarkerDemo from '@/components/marker-demo';
-export default async function Home(){const locale=await getLocale();const t=(text:string)=>translate(locale,text);const articles=getArticles(locale);const experiments=getExperiments(locale);return <main id="main">
-  <section className="hero shell marker-home-intro">
-    <div><Label>{t("games, people & product")}</Label><h1>{t("play. notice.")}<br/>{t("question. test.")}</h1><p className="hero-signature">{t("an independent learning notebook by barış.")}</p></div>
-    <div className="hero-note"><span className="note-index">{t("NO. 001 — AN OPEN NOTEBOOK")}</span><p>{t("I play games, study the decisions behind them, and turn what I notice into questions worth testing.")}</p><Link locale={locale} href="/thinking" className="button">{t("open the notebook")}</Link></div>
-  </section>
-  <section className="shell marker-home" aria-label={locale==='tr'?'Bir görüntü, birkaç soru':'One image, a few questions'}>
-    <MarkerDemo locale={locale}/>
-    <div className="marker-home-caption"><span>{locale==='tr'?'gözlemle. işaretle. sor.':'notice. mark. question.'}</span><Link locale={locale} href="/deneme" className="small-link">{locale==='tr'?'denemeye yakından bak ↗':'a closer look at the study ↗'}</Link></div>
-  </section>
-  <GameSketchbook locale={locale}/>
-  <section className="shell home-board" aria-label={t("Inside the notebook")}>
-    <Link locale={locale} className="feature-panel" href={`/thinking/${articles[0].slug}`}><div className="panel-heading"><Label>{t("01 / selected thinking")}</Label><span className="small-meta">{t("sample note")}</span></div><div className="feature-copy"><h2>{articles[0].title}</h2><p>{articles[0].summary}</p></div><Motif locale={locale}/><div className="panel-action"><span>{t("read the teardown")}</span><span>{articles[0].readTime}</span></div></Link>
-    <div className="experiment-stack">{experiments.slice(0,2).map((e,i)=><Link locale={locale} href={`/experiments#${e.slug}`} className={`compact-experiment experiment-tone-${i}`} key={e.id}><div className="panel-heading"><Label>{t("experiment")} {e.id}</Label><span className="small-meta">{t("proposed")}</span></div><h2>{e.title}</h2><p>{e.question}</p><div className="compact-art"><span className="mini-button">{t("see the test plan")}</span><NotebookArt kind={e.visual}/></div></Link>)}</div>
-    <Link locale={locale} href="/about" className="about-panel"><div className="panel-heading"><Label>{t("02 / the person behind it")}</Label></div><h2>{t("curious.")}<br/>{t("still growing.")}</h2><p>{t("Learning the mobile gaming industry, one question at a time.")}</p><img src="/images/footer-cactus.webp" alt={t("Green cacti and purple crystals")} width="260" height="390"/><span className="mini-button">{t("a little about barış")}</span></Link>
-  </section>
-  <section className="paper-section"><div className="shell"><SectionHeading locale={locale} title={t("recent notes")} href="/thinking" label={t("all thinking")}/><div className="article-grid">{articles.slice(1).map(a=><ArticleCard locale={locale} article={a} key={a.slug}/>)}</div><div className="topic-block"><Label>{t("following my curiosity")}</Label><div className="topic-links">{topics.filter(t=>t!=='all').map(t=><Link locale={locale} key={t} href={`/thinking?topic=${encodeURIComponent(t)}`}>{translate(locale,t)}</Link>)}</div></div></div></section>
-  <section className="shell home-about"><div className="practice-art"><Label>{t("the practice")}</Label><NotebookArt kind="notebook"/></div><div className="practice-copy"><p>{t("Play something. Notice a pattern.")}<br/>{t("Ask a better question. Find a way to test it.")}</p><Link locale={locale} href="/experiments" className="small-link">{t("inside the experiment notebook")}</Link></div></section>
-</main>}
+import { companies } from '@/lib/portfolio';
+import { PortfolioState } from '@/components/portfolio-elements';
+import { Label } from '@/components/site';
+
+export default async function Home() {
+  const locale = await getLocale();
+  const tr = locale === 'tr';
+  return <main id="main">
+    <section className="shell portfolio-hero">
+      <div>
+        <Label>{tr ? 'oyunlar / ürün düşüncesi / özgün çalışmalar' : 'games / product thinking / first-hand work'}</Label>
+        <h1>{tr ? <>play. observe.<br/><em>question.</em> improve.</> : <>play. observe.<br/><em>question.</em> improve.</>}</h1>
+        <p>{tr ? 'Mobil oyunları bir product bakış açısıyla öğreniyorum. Gözlemlerimi, kanıtlarımı ve test edilebilir geliştirme önerilerimi burada biriktiriyorum.' : 'I study mobile games through a product lens — collecting evidence, questioning design decisions, and developing testable improvement ideas.'}</p>
+        <Link locale={locale} href="/companies" className="button">{tr ? 'şirketleri ve oyunları keşfet' : 'explore companies & games'} <span aria-hidden="true">↗</span></Link>
+      </div>
+      <aside className="portfolio-hero-aside">
+        <span className="portfolio-eyebrow">{tr ? 'çalışma yaklaşımım' : 'my approach'}</span>
+        <div className="portfolio-hero-steps">
+          <span>01 <strong>{tr ? 'öğren' : 'learn'}</strong></span>
+          <span>02 <strong>{tr ? 'gözlemle' : 'observe'}</strong></span>
+          <span>03 <strong>{tr ? 'alternatif öner' : 'propose'}</strong></span>
+          <span>04 <strong>{tr ? 'test tasarla' : 'design a test'}</strong></span>
+        </div>
+        <p>{tr ? 'çalışmalar öğrendikçe gelişecek. eksik kanıtlar, taslaklar ve test edilmemiş hipotezler açıkça belirtilecek.' : 'This is an evolving body of work. Drafts, missing evidence, and untested hypotheses will always be labeled.'}</p>
+      </aside>
+    </section>
+
+    <section className="portfolio-home-section shell">
+      <div className="portfolio-section-title"><h2>{tr ? 'şirketler & oyunlar' : 'companies & games'}</h2><Link locale={locale} href="/companies" className="small-link">{tr ? 'hepsini gör' : 'view the archive'} ↗</Link></div>
+      <p className="portfolio-section-description">{tr ? 'önce şirketi, sonra oyunu seç. oyunun altında zamanla tamamlanan analizler ve tasarım önerileri bulunacak.' : 'Start with a company, choose a game, then explore its first-hand product studies and proposed changes.'}</p>
+      <div className="portfolio-company-grid">
+        {companies.map((company,index)=><Link locale={locale} key={company.slug} href={'/companies/'+company.slug} className="portfolio-company-card">
+          <div className="portfolio-company-cover"><span>0{index+1} / studio</span><strong>{company.initials}</strong><span>{company.games.length} games</span></div>
+          <div className="portfolio-company-bottom"><h3>{company.name} <span aria-hidden="true">↗</span></h3>
+            <div className="portfolio-tags">{company.games.map(game=><span key={game.slug}>{game.name}</span>)}</div>
+          </div>
+        </Link>)}
+      </div>
+    </section>
+
+    <section className="portfolio-evidence-band">
+      <div className="shell portfolio-evidence-inner">
+        <div><span className="portfolio-eyebrow">how I think</span><h2>{tr ? 'sadece yeniden tasarım değil.' : 'not just a redesign.'}</h2><p>{tr ? 'görsel önerinin arkasında gerekçe, ölçüm fikri ve risk analizi olacak. beğeni ile etkiyi birbirine karıştırmayacağım.' : 'Every design proposal needs reasoning, an expected behavioral effect, and possible trade-offs. A better-looking screen is not proof of a better product.'}</p></div>
+        <div className="portfolio-evidence-flow">
+          {(tr ? ['gerçek ekran görüntüsü / video','gözlem & problem','hipotez & önerilen değişiklik','metrikler & trade-off','önerilen deney'] : ['real gameplay capture','observation & problem','hypothesis & proposed change','metrics & trade-offs','suggested experiment']).map((step,i)=><div key={step}><span>0{i+1}</span><strong>{step}</strong></div>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="shell portfolio-home-writing">
+      <div><span className="portfolio-eyebrow">{tr ? 'kişisel alan' : 'personal notes'}</span><h2>{tr ? 'küçük notlar, büyük sorular.' : 'small notes, bigger questions.'}</h2><p>{tr ? 'şirket ve oyun çalışmalarından ayrı, kendi yazdığım kısa yazılar için bir alan. mevcut örnek yazılar gerçek araştırma sonucu olarak sunulmuyor.' : 'A separate space for short original writing. Earlier illustrative sample posts are labeled as samples, not completed research.'}</p></div>
+      <Link locale={locale} href="/thinking" className="button">{tr ? 'yazılar alanı' : 'writing archive'} ↗</Link>
+    </section>
+  </main>;
+}
