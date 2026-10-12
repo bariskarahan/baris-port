@@ -5,10 +5,15 @@ import { topics } from '@/lib/content';
 import { getArticles, getExperiments } from '@/lib/content-tr';
 import { Label, Motif, SectionHeading, ArticleCard, NotebookArt } from '@/components/site';
 import { GameSketchbook } from '@/components/game-sketchbook';
+import MarkerDemo from '@/components/marker-demo';
 export default async function Home(){const locale=await getLocale();const t=(text:string)=>translate(locale,text);const articles=getArticles(locale);const experiments=getExperiments(locale);return <main id="main">
-  <section className="hero shell">
+  <section className="hero shell marker-home-intro">
     <div><Label>{t("games, people & product")}</Label><h1>{t("play. notice.")}<br/>{t("question. test.")}</h1><p className="hero-signature">{t("an independent learning notebook by barış.")}</p></div>
-    <div className="hero-note"><span className="note-index">{t("NO. 001 — AN OPEN NOTEBOOK")}</span><img className="hero-playbench" src="/images/game-playbench.webp" alt={locale==='tr' ? 'Bulmaca ekranlı amber telefon, küçük karakterler, güçlendiriciler ve kaktüsle çizilmiş özgün bir mobil oyun masası.' : 'An original hand-drawn mobile game workbench with an amber puzzle phone, tiny characters, boosters and a cactus.'} width="1536" height="1024" fetchPriority="high"/><p>{t("I play games, study the decisions behind them, and turn what I notice into questions worth testing.")}</p><Link locale={locale} href="/thinking" className="button">{t("open the notebook")}</Link></div>
+    <div className="hero-note"><span className="note-index">{t("NO. 001 — AN OPEN NOTEBOOK")}</span><p>{t("I play games, study the decisions behind them, and turn what I notice into questions worth testing.")}</p><Link locale={locale} href="/thinking" className="button">{t("open the notebook")}</Link></div>
+  </section>
+  <section className="shell marker-home" aria-label={locale==='tr'?'Bir görüntü, birkaç soru':'One image, a few questions'}>
+    <MarkerDemo locale={locale}/>
+    <div className="marker-home-caption"><span>{locale==='tr'?'gözlemle. işaretle. sor.':'notice. mark. question.'}</span><Link locale={locale} href="/deneme" className="small-link">{locale==='tr'?'denemeye yakından bak ↗':'a closer look at the study ↗'}</Link></div>
   </section>
   <GameSketchbook locale={locale}/>
   <section className="shell home-board" aria-label={t("Inside the notebook")}>

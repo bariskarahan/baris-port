@@ -31,6 +31,9 @@ Add notes to `lib/content.ts`. Each article includes a unique slug, category, su
 - `/thinking/[slug]` — analysis with section navigation
 - `/experiments` — question, hypothesis, setup, metric, result, lesson
 - `/about` — short introduction and learning principles
+- `/deneme` — blue/violet photographic scene with yellow handwriting drawn stroke by stroke; replay, pause, and speed controls. Available in English and Turkish, with a reduced-motion view.
+
+The animated scene also introduces the homepage. Letter spacing, slant, height, line weight, and pen speed vary subtly to give the notes a natural handwritten rhythm.
 
 Visual system: gray paper surfaces, bold black typography, thin framed panels, neutral and lavender experiment pages, flat hand-drawn comic illustrations of cacti and research-informed mobile puzzles, progression tracks, and team events, and torn paper transitions inspired by the supplied reference. Global styles live in `app/globals.css`; reusable components in `components/`. English content reflects the supplied brief. Identity currently uses Barış; no unprovided contact details or credentials are fabricated.
 
