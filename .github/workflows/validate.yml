@@ -1,0 +1,26 @@
+name: validate portfolio
+on:
+  push:
+    branches:
+      - main
+      - draft/company-game-case-studies
+  pull_request:
+    branches:
+      - main
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: install dependencies
+        run: npm ci
+      - name: typecheck
+        run: npm run typecheck
+      - name: production build
+        run: npm run build

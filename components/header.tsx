@@ -49,7 +49,7 @@ export default function Header({ locale = 'en' }: { locale?: Locale }) {
 
   return <header className="site-header shell">
     <Link href={localePath('/', locale)} className="wordmark" aria-label={t('Barış home')}>barış<span>.</span></Link>
-    <nav aria-label={t('Main navigation')}>{[['/thinking','thinking'],['/experiments','experiments'],['/about','about'],['/deneme','deneme']].map(([href,label])=><Link href={localePath(href,locale)} key={href} aria-current={pathname.startsWith(href)?'page':undefined}>{t(label)}</Link>)}</nav>
+    <nav aria-label={t('Main navigation')}>{[['/companies','companies'],['/thinking','writing'],['/about','about']].map(([href,label])=><Link href={localePath(href,locale)} key={href} aria-current={pathname.startsWith(href)?'page':undefined}>{t(label)}</Link>)}</nav>
     <div className="header-tools"><span className="edition">{t('independent learning / v0.1')}</span><div className="language-switcher" ref={languageControl}>
       <button className="language-trigger" type="button" ref={languageButton} aria-label={`${t('Change language')}: ${locale==='en'?'English':'Türkçe'}`} aria-expanded={languageOpen} aria-controls={languagePanelId} onClick={()=>setLanguageOpen(open=>!open)} onKeyDown={event=>{
         if (event.key==='ArrowDown') { event.preventDefault(); setLanguageOpen(true); }
